@@ -17,6 +17,10 @@ int CALLBACK WinMain(
 		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
+			if (wnd.kbd.KeyIsPressed(VK_UP))
+			{
+				MessageBox(nullptr, "Ololo", "UP was presd", MB_OK | MB_ICONEXCLAMATION);
+			}
 		}
 
 		if (gResult == -1)
