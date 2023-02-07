@@ -149,10 +149,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CustmExeption.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WInMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CustmException.h" />
     <ClInclude Include="CustmWin.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
