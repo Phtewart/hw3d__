@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "App.h"
 
 int CALLBACK WinMain(
 	HINSTANCE hInstance,
@@ -8,27 +8,8 @@ int CALLBACK WinMain(
 {
 	try
 	{
-		Window wnd(800, 600, "Test test");
+		return App{}.Go();
 
-		// message pump
-		MSG msg;
-		BOOL gResult;
-		while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-			if (wnd.kbd.KeyIsPressed(VK_UP))
-			{
-				MessageBox(nullptr, "Ololo", "UP was presd", MB_OK | MB_ICONEXCLAMATION);
-			}
-		}
-
-		if (gResult == -1)
-		{
-			throw CHWND_LAST_EXCEPT();
-		}
-
-		return msg.wParam;
 	}
 	catch (const CustmException& e)
 	{
