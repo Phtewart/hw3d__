@@ -19,6 +19,9 @@
     <Filter Include="Source Files\DxErrors">
       <UniqueIdentifier>{4ef57bde-2601-4612-bbe6-ecead48f8710}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{8258216e-e576-45bd-98d2-343cdf0a5f09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WInMain.cpp">
@@ -94,5 +97,13 @@
     <None Include="DXGetErrorDescription.inl">
       <Filter>Header Files\DxErros</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="VertexShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="PixelShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
