@@ -166,12 +166,13 @@
     <ClInclude Include="CustmWin.h" />
     <ClInclude Include="dxerr.h" />
     <ClInclude Include="DxgiInfoMenegder.h" />
-    <ClInclude Include="GFXMacros.h" />
+    <ClInclude Include="GFXExceptionMacros.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="WindowExceptionMacros.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DXGetErrorDescription.inl" />

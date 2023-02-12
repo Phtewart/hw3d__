@@ -22,6 +22,9 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{8258216e-e576-45bd-98d2-343cdf0a5f09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Macros">
+      <UniqueIdentifier>{608f7e33-bcd0-44c5-b953-5aa442a5bf4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WInMain.cpp">
@@ -85,6 +88,12 @@
     </ClInclude>
     <ClInclude Include="DxgiInfoMenegder.h">
       <Filter>Header Files\DxErros</Filter>
+    </ClInclude>
+    <ClInclude Include="GFXExceptionMacros.h">
+      <Filter>Header Files\Macros</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowExceptionMacros.h">
+      <Filter>Header Files\Macros</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

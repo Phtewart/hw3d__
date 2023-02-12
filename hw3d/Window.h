@@ -6,6 +6,7 @@
 #include "Graphics.h"
 #include <optional>
 #include <memory>
+#include "WindowExceptionMacros.h"
 
 class Window
 {
@@ -58,6 +59,3 @@ private:
 	HWND hWnd;
 	std::unique_ptr<Graphics> pGfx;
 };
-
-#define CHWND_EXCEPT( hr ) Window::Exception( __LINE__,__FILE__,hr )
-#define CHWND_LAST_EXCEPT() Window::Exception( __LINE__,__FILE__,GetLastError() )
