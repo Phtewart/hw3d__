@@ -5,9 +5,13 @@
 #include <vector>
 #include <wrl.h>
 #include "DxgiInfoMenegder.h"
+#include <d3dcompiler.h>
+#include <DirectXMath.h>
+#include <random>
 
 class Graphics
 {
+	friend class Bindable;
 public:
 	class Exception : public CustmException
 	{
@@ -52,8 +56,11 @@ public:
 	~Graphics() = default;
 	void EndFrame();
 	void ClearBuffer(float red, float green, float blue) noexcept;
-	void DrawTriangle(float angle, float x, float y);
+	void DrawIndexed(UINT count);
+	void SetProjection(DirectX::FXMMATRIX proj) noexcept;
+	DirectX::XMMATRIX GetProjection() const noexcept;
 private:
+	DirectX::XMMATRIX projection;
 #ifndef NDEBUG
 	DxgiInfoManager infoManager;
 #endif

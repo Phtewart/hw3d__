@@ -25,15 +25,33 @@
     <Filter Include="Header Files\Macros">
       <UniqueIdentifier>{608f7e33-bcd0-44c5-b953-5aa442a5bf4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DX11Pipeline">
+      <UniqueIdentifier>{53d4620c-0d62-44da-80e6-46e512388977}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DX11Pipeline">
+      <UniqueIdentifier>{433bdeb9-bb30-4d63-9302-67c2855464e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Drawable">
+      <UniqueIdentifier>{2417a8ad-7e8a-4bb9-a1b9-86d57ee43959}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Drawable">
+      <UniqueIdentifier>{2db394a7-ebdd-4617-814d-16b461f9d2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shapes">
+      <UniqueIdentifier>{3b6259ba-a499-4dc4-abe7-8e2daae383e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shapes">
+      <UniqueIdentifier>{1b8c72b1-0603-4161-8d9e-7abaab393251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shapes\Bais">
+      <UniqueIdentifier>{87904474-9116-4a58-8403-20fbeaa72de6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WInMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CustmExeption.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Keyboard.cpp">
@@ -56,6 +74,39 @@
     </ClCompile>
     <ClCompile Include="DxgiInfoMenegder.cpp">
       <Filter>Source Files\DxErrors</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindable.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="IndicesBuffer.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="InputLayout.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawable.cpp">
+      <Filter>Source Files\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformConstBuffer.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="CustmExeption.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>Source Files\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Topology.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShader.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexShader.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +146,51 @@
     <ClInclude Include="WindowExceptionMacros.h">
       <Filter>Header Files\Macros</Filter>
     </ClInclude>
+    <ClInclude Include="Bindable.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="IndicesBuffer.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformConstBuffer.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="InputLayout.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.h">
+      <Filter>Header Files\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableBase.h">
+      <Filter>Header Files\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexedTriangleList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffers.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>Header Files\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="BIndableBase.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Topology.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShader.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexShader.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\Shapes\Bais</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DXGetErrorString.inl">
@@ -108,10 +204,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="VertexShader.hlsl">
+    <FxCompile Include="ColorIndexVS.hlsl">
       <Filter>Shader</Filter>
     </FxCompile>
-    <FxCompile Include="PixelShader.hlsl">
+    <FxCompile Include="ColorIndexPS.hlsl">
       <Filter>Shader</Filter>
     </FxCompile>
   </ItemGroup>
