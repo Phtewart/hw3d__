@@ -1,6 +1,12 @@
 #include "App.h"
 #include "Box.h"
+#include "Sheet.h"
+#include <memory>
+#include <algorithm>
+#include "Surface.h"
+#include "GDIPlusManager.h"
 
+GDIPlusManager qdipm;
 
 App::App()
 	:
@@ -18,9 +24,9 @@ App::App()
 			switch (typedist(rng))
 			{
 			case 0:
-				return std::make_unique<Box>(
+				return std::make_unique<Sheet>(
 					gfx, rng, adist, ddist,
-					odist, rdist, bdist
+					odist, rdist
 					);
 			case 1:
 				return std::make_unique<Box>(

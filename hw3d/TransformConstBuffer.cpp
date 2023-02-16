@@ -1,4 +1,4 @@
-#include "TransformConstBuffer.h"
+#include "TransformCBuf.h"
 
 TransformCbuf::TransformCbuf(Graphics& gfx, const Drawable& parent)
 	:

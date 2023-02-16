@@ -1,5 +1,6 @@
 #include "Window.h"
 #include <sstream>
+#include "Surface.h"
 
 // WindowCLass
 Window::WindowClass Window::WindowClass::wndClass;
@@ -256,6 +257,8 @@ Window::Exception::Exception(int line, const char* file, HRESULT hr) noexcept
 	CustmException(line,file),hr(hr)
 {
 }
+
+
 
 const char* Window::Exception::what() const noexcept
 {

@@ -43,8 +43,11 @@
     <Filter Include="Source Files\Shapes">
       <UniqueIdentifier>{1b8c72b1-0603-4161-8d9e-7abaab393251}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Shapes\Bais">
+    <Filter Include="Header Files\Shapes\Primitiv">
       <UniqueIdentifier>{87904474-9116-4a58-8403-20fbeaa72de6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shapes\Primitiv">
+      <UniqueIdentifier>{681d8f32-4ca8-4481-9c3b-836cf2cda661}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,9 +99,6 @@
     <ClCompile Include="CustmExeption.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Box.cpp">
-      <Filter>Source Files\Shapes</Filter>
-    </ClCompile>
     <ClCompile Include="Topology.cpp">
       <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
@@ -106,6 +106,24 @@
       <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
     <ClCompile Include="VertexShader.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Surface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GDIPlusMenedger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>Source Files\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Sheet.cpp">
+      <Filter>Source Files\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
       <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
   </ItemGroup>
@@ -155,7 +173,7 @@
     <ClInclude Include="IndicesBuffer.h">
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="TransformConstBuffer.h">
+    <ClInclude Include="TransformCBuf.h">
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
     <ClInclude Include="InputLayout.h">
@@ -189,7 +207,28 @@
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
     <ClInclude Include="Cube.h">
-      <Filter>Header Files\Shapes\Bais</Filter>
+      <Filter>Header Files\Shapes\Primitiv</Filter>
+    </ClInclude>
+    <ClInclude Include="Surface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GDIPlusManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sheet.h">
+      <Filter>Header Files\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Header Files\Shapes\Primitiv</Filter>
+    </ClInclude>
+    <ClInclude Include="ChiliMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Sampler.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +247,12 @@
       <Filter>Shader</Filter>
     </FxCompile>
     <FxCompile Include="ColorIndexPS.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="TexturePS.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="TextureVS.hlsl">
       <Filter>Shader</Filter>
     </FxCompile>
   </ItemGroup>
