@@ -1,5 +1,4 @@
 #define FULL_WINTARD
-
 #include "Surface.h"
 #include <algorithm>
 namespace Gdiplus
@@ -14,19 +13,10 @@ namespace Gdiplus
 
 Surface::Surface(unsigned int width, unsigned int height) noexcept
 	:
-	pBuffer(std::make_unique<Color[]>(width*height)),
-	width(width),height(height)
-{
-
-}
-
-Surface::Surface(Surface&& source) noexcept
-	:
-	pBuffer(std::move(source.pBuffer)),
-	width(source.width),
-	height(source.height)
-{
-}
+	pBuffer(std::make_unique<Color[]>(width* height)),
+	width(width),
+	height(height)
+{}
 
 Surface& Surface::operator=(Surface&& donor) noexcept
 {
@@ -37,16 +27,22 @@ Surface& Surface::operator=(Surface&& donor) noexcept
 	return *this;
 }
 
+Surface::Surface(Surface&& source) noexcept
+	:
+	pBuffer(std::move(source.pBuffer)),
+	width(source.width),
+	height(source.height)
+{}
+
 Surface::~Surface()
-{
-}
+{}
 
 void Surface::Clear(Color fillValue) noexcept
 {
 	memset(pBuffer.get(), fillValue.dword, width * height * sizeof(Color));
 }
 
-void Surface::PutPixel(unsigned int x, unsigned int y, Color c) noexcept(!_DEBUG)
+void Surface::PutPixel(unsigned int x, unsigned int y, Color c) noexcept(!IS_DEBUG)
 {
 	assert(x >= 0);
 	assert(y >= 0);
@@ -55,7 +51,7 @@ void Surface::PutPixel(unsigned int x, unsigned int y, Color c) noexcept(!_DEBUG
 	pBuffer[y * width + x] = c;
 }
 
-Surface::Color Surface::GetPixel(unsigned int x, unsigned int y) const noexcept(!_DEBUG)
+Surface::Color Surface::GetPixel(unsigned int x, unsigned int y) const noexcept(!IS_DEBUG)
 {
 	assert(x >= 0);
 	assert(y >= 0);
@@ -187,7 +183,7 @@ void Surface::Save(const std::string& filename) const
 	}
 }
 
-void Surface::Copy(const Surface& src) noexcept(!_DEBUG)
+void Surface::Copy(const Surface& src) noexcept(!IS_DEBUG)
 {
 	assert(width == src.width);
 	assert(height == src.height);
@@ -199,8 +195,8 @@ Surface::Surface(unsigned int width, unsigned int height, std::unique_ptr<Color[
 	width(width),
 	height(height),
 	pBuffer(std::move(pBufferParam))
-{
-}
+{}
+
 
 // surface exception stuff
 Surface::Exception::Exception(int line, const char* file, std::string note) noexcept

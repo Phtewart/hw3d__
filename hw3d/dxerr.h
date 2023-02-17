@@ -84,7 +84,7 @@ extern "C" {
 	// Helper macros
 	//
 	//--------------------------------------------------------------------------------------
-#if defined(DEBUG) || defined(_DEBUG)
+#if defined(DEBUG) || defined(IS_DEBUG)
 #ifdef UNICODE
 #define DXTRACE_MSG(str)              DXTrace( __FILEW__, (DWORD)__LINE__, 0, str, false )
 #define DXTRACE_ERR(str,hr)           DXTrace( __FILEW__, (DWORD)__LINE__, hr, str, false )
