@@ -20,11 +20,11 @@
 #define NOCTLMGR
 #define NODRAWTEXT
 #define NOKERNEL
-#define NONLS
+//#define NONLS
 #define NOMEMMGR
 #define NOMETAFILE
 #define NOOPENFILE
-#define NOSCROLL
+//#define NOSCROLL
 #define NOSERVICE
 #define NOSOUND
 #define NOTEXTMETRIC
