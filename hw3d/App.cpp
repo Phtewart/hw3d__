@@ -1,6 +1,7 @@
 #include "App.h"
 #include "Box.h"
 #include "Sheet.h"
+#include "AssimpM.h"
 #include <memory>
 #include <algorithm>
 #include "Surface.h"
@@ -35,6 +36,11 @@ App::App()
 					gfx, rng, adist, ddist,
 					odist, rdist, bdist, mat
 					);
+			case 1:
+				return std::make_unique<AssimpM>(
+					gfx, rng, adist, ddist,
+					odist, rdist,mat,1.5f
+					);
 			default:
 				assert(false && "bad drawable type in factory");
 				return {};
@@ -52,7 +58,7 @@ App::App()
 		std::uniform_int_distribution<int> latdist{ 5,20 };
 		std::uniform_int_distribution<int> longdist{ 10,40 };
 		std::uniform_real_distribution<float> cdist{ 0.0f,1.0f };;
-		std::uniform_int_distribution<int> typedist{ 0,0 };
+		std::uniform_int_distribution<int> typedist{ 0,1 };
 	};
 
 	drawables.reserve(nDrawables);

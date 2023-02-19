@@ -165,6 +165,9 @@
     <ClCompile Include="SolidSphere.cpp">
       <Filter>Source Files\Drawable</Filter>
     </ClCompile>
+    <ClCompile Include="AssimpM.cpp">
+      <Filter>Source Files\Drawable</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustmWin.h">
@@ -312,6 +315,9 @@
       <Filter>Header Files\Shapes\Primitiv</Filter>
     </ClInclude>
     <ClInclude Include="TestObject.h">
+      <Filter>Header Files\Drawable</Filter>
+    </ClInclude>
+    <ClInclude Include="AssimpM.h">
       <Filter>Header Files\Drawable</Filter>
     </ClInclude>
   </ItemGroup>
