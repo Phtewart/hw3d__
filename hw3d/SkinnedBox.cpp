@@ -2,7 +2,7 @@
 
 #include "BindableBase.h"
 #include "GFXExceptionMacros.h"
-#include "Cube2.h"
+#include "Cube.h"
 #include "Surface.h"
 #include "Texture.h"
 
@@ -39,7 +39,7 @@ SkinnedBox::SkinnedBox(Graphics& gfx,
 				float v;
 			} tex;
 		};
-		const auto model = Cube2::MakeSkinned<Vertex>();
+		const auto model = Cube::MakeSkinned<Vertex>();
 
 		AddStaticBind(std::make_unique<VertexBuffer>(gfx, model.vertices));
 
