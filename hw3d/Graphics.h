@@ -50,7 +50,7 @@ public:
 		std::string reason;
 	};
 public:
-	Graphics(HWND hWnd);
+	Graphics(HWND hWnd,int width,int height);
 	Graphics(const Graphics&) = delete;
 	Graphics& operator=(const Graphics&) = delete;
 	~Graphics();
@@ -66,6 +66,8 @@ public:
 	bool IsImguiEnabled() noexcept;
 private:
 	bool imguiEnabled = true;
+	UINT winWidth;
+	UINT winHeight;
 	DirectX::XMMATRIX projection;
 	DirectX::XMMATRIX camera;
 #ifndef NDEBUG

@@ -13,7 +13,7 @@ GDIPlusManager gdipm;
 
 App::App()
 	:
-	wnd(800, 600, "The Donkey Fart Box"),
+	wnd(1200, 900, "The Donkey Fart Box"),
 	pLight(wnd.Gfx())
 	
 {

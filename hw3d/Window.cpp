@@ -75,7 +75,7 @@ Window::Window(int width, int height, const char* name)
 	ImGui_ImplWin32_Init(hWnd);
 
 	// create graphics object
-	pGfx = std::make_unique<Graphics>(hWnd);
+	pGfx = std::make_unique<Graphics>(hWnd,width,height);
 }
 
 Window::~Window()
@@ -118,6 +118,7 @@ Graphics& Window::Gfx()
 {
 	return *pGfx;
 }
+
 
 LRESULT Window::HandleMsgSetup(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept
 {

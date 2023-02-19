@@ -6,6 +6,7 @@
 #include "GFXExceptionMacros.h"
 #include "imgui/backends/imgui_impl_dx11.h"
 #include "imgui/backends/imgui_impl_win32.h"
+#include "Window.h"
 
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"D3DCompiler.lib")
@@ -14,7 +15,10 @@ namespace wrl = Microsoft::WRL;
 namespace dx = DirectX;
 
 
-Graphics::Graphics(HWND hWnd)
+Graphics::Graphics(HWND hWnd,int width, int height)
+	:
+	winWidth((UINT)width),
+	winHeight((UINT)height)
 {
 	DXGI_SWAP_CHAIN_DESC sd = {};
 	sd.BufferDesc.Width = 0;
@@ -79,9 +83,9 @@ Graphics::Graphics(HWND hWnd)
 
 	// create depth stensil texture
 	wrl::ComPtr<ID3D11Texture2D> pDepthStencil;
-	D3D11_TEXTURE2D_DESC descDepth = {};
-	descDepth.Width = 800u;
-	descDepth.Height = 600u;
+	D3D11_TEXTURE2D_DESC descDepth = {}; 
+	descDepth.Width = winWidth;
+	descDepth.Height = winHeight;
 	descDepth.MipLevels = 1u;
 	descDepth.ArraySize = 1u;
 	descDepth.Format = DXGI_FORMAT_D32_FLOAT;
@@ -198,6 +202,7 @@ bool Graphics::IsImguiEnabled() noexcept
 {
 	return imguiEnabled;
 }
+
 
 // Exeptions
 
