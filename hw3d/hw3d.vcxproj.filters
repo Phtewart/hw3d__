@@ -126,9 +126,6 @@
     <ClCompile Include="Box.cpp">
       <Filter>Source Files\Drawable</Filter>
     </ClCompile>
-    <ClCompile Include="Sheet.cpp">
-      <Filter>Source Files\Drawable</Filter>
-    </ClCompile>
     <ClCompile Include="SkinnedBox.cpp">
       <Filter>Source Files\Drawable</Filter>
     </ClCompile>
@@ -167,6 +164,9 @@
     </ClCompile>
     <ClCompile Include="AssimpM.cpp">
       <Filter>Source Files\Drawable</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -233,7 +233,7 @@
     <ClInclude Include="ConstantBuffers.h">
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="BIndableBase.h">
+    <ClInclude Include="BIndableCommon.h">
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
     <ClInclude Include="Topology.h">
@@ -264,9 +264,6 @@
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
     <ClInclude Include="Box.h">
-      <Filter>Header Files\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="Sheet.h">
       <Filter>Header Files\Drawable</Filter>
     </ClInclude>
     <ClInclude Include="SkinnedBox.h">
@@ -321,6 +318,9 @@
       <Filter>Header Files\Drawable</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

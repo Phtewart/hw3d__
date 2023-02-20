@@ -4,6 +4,8 @@
 #include <cassert>
 #include <typeinfo>
 
+using namespace Bind;
+
 void Drawable::Draw(Graphics& gfx) const
 {
 	for (auto& b : binds)

@@ -3,8 +3,11 @@
 #include <DirectXMath.h>
 #include <memory>
 
-class Bindable;
-class IndicesBuffer;
+namespace Bind
+{
+	class Bindable;
+	class IndicesBuffer;
+}
 
 class Drawable
 {
@@ -15,7 +18,7 @@ public:
 	Drawable(const Drawable&) = delete;
 	virtual DirectX::XMMATRIX GetTransformXM() const noexcept = 0;
 	void Draw(Graphics& gfx) const;
-	virtual void Update(float dt) noexcept = 0;
+	virtual void Update(float dt) noexcept{}
 	virtual ~Drawable() = default;
 protected:
 	template<class T>
@@ -30,11 +33,11 @@ protected:
 		}
 		return nullptr;
 	}
-	void AddBind(std::unique_ptr<Bindable> bind);
-	void AddIndexBuffer(std::unique_ptr<IndicesBuffer> ibuf);
+	void AddBind(std::unique_ptr<Bind::Bindable> bind);
+	void AddIndexBuffer(std::unique_ptr<Bind::IndicesBuffer> ibuf);
 private:
-	virtual const std::vector<std::unique_ptr<Bindable>>& GetStaticBinds() const noexcept = 0;
+	virtual const std::vector<std::unique_ptr<Bind::Bindable>>& GetStaticBinds() const noexcept = 0;
 private:
-	const IndicesBuffer* pIndexBuffer = nullptr;
-	std::vector<std::unique_ptr<Bindable>> binds;
+	const Bind::IndicesBuffer* pIndexBuffer = nullptr;
+	std::vector<std::unique_ptr<Bind::Bindable>> binds;
 };

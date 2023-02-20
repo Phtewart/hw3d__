@@ -3,7 +3,7 @@
 #include <type_traits>
 #include "Graphics.h"
 
-namespace hw3dexp
+namespace Dvtx
 {
 	struct BGRAColor
 	{
@@ -66,7 +66,7 @@ namespace hw3dexp
 		};
 		template<> struct Map<BGRAColor>
 		{
-			using SysType = hw3dexp::BGRAColor;
+			using SysType = Dvtx::BGRAColor;
 			static constexpr DXGI_FORMAT dxgiFormat = DXGI_FORMAT_R8G8B8A8_UNORM;
 			static constexpr const char* semantic = "Color";
 		};

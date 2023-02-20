@@ -1,12 +1,12 @@
 #include "SkinnedBox.h"
 
-#include "BindableBase.h"
+#include "BindableCommon.h"
 #include "GFXExceptionMacros.h"
 #include "Cube.h"
 #include "Surface.h"
 #include "Texture.h"
 
-
+using namespace Bind;
 
 SkinnedBox::SkinnedBox(Graphics& gfx,
 	std::mt19937& rng,

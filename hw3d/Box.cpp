@@ -1,9 +1,10 @@
 #include "Box.h"
-#include "BIndableBase.h"
+#include "BIndableCommon.h"
 #include "GFXExceptionMacros.h"
 #include "Cube.h"
 #include "imgui/imgui.h"
 
+using namespace Bind;
 
 Box::Box(Graphics& gfx,
 	std::mt19937& rng,
