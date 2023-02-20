@@ -246,7 +246,6 @@
     <None Include="DXGetErrorDescription.inl" />
     <None Include="DXGetErrorString.inl" />
     <None Include="DXTrace.inl" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="ColorIndexPS.hlsl">

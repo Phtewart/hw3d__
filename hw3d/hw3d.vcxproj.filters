@@ -334,7 +334,6 @@
     <None Include="DXGetErrorDescription.inl">
       <Filter>Header Files\DxErros</Filter>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="ColorIndexVS.hlsl">
