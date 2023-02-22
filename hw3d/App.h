@@ -24,4 +24,5 @@ private:
 	Camera camera;
 	PointLight pLight;
 	Model nano{ wnd.Gfx(),"models\\nano.gltf" };
+	bool mouseLeftIsPressed = false;
 };

@@ -1,14 +1,14 @@
 #include "App.h"
-#include "Box.h"
 #include "AssimpM.h"
 #include <memory>
 #include <algorithm>
 #include "Surface.h"
-#include "SkinnedBox.h"
 #include "GDIPlusManager.h"
 #include "imgui/imgui.h"
 
 namespace dx = DirectX;
+
+
 GDIPlusManager gdipm;
 
 App::App()
@@ -30,6 +30,54 @@ void App::DoFrame()
 	nano.Draw(wnd.Gfx());
 	pLight.Draw(wnd.Gfx());
 	
+	
+	if(wnd.mouse.RightIsPressed())
+	{
+		wnd.DisableCursor();
+		wnd.mouse.EnableRaw();
+	}
+	else
+	{
+		wnd.EnableCursor();
+		wnd.mouse.DisableRaw();
+	}
+
+
+	if (!wnd.CursorEnabled())
+	{
+		if (wnd.kbd.KeyIsPressed('W'))
+		{
+			camera.Translate({ 0.0f,0.0f,dt });
+		}
+		if (wnd.kbd.KeyIsPressed('A'))
+		{
+			camera.Translate({ -dt,0.0f,0.0f });
+		}
+		if (wnd.kbd.KeyIsPressed('S'))
+		{
+			camera.Translate({ 0.0f,0.0f,-dt });
+		}
+		if (wnd.kbd.KeyIsPressed('D'))
+		{
+			camera.Translate({ dt,0.0f,0.0f });
+		}
+		if (wnd.kbd.KeyIsPressed('E'))
+		{
+			camera.Translate({ 0.0f,dt,0.0f });
+		}
+		if (wnd.kbd.KeyIsPressed('Q'))
+		{
+			camera.Translate({ 0.0f,-dt,0.0f });
+		}
+	}
+	while (const auto delta = wnd.mouse.ReadRawDelta())
+	{
+		if (!wnd.CursorEnabled())
+		{
+			camera.Rotate((float)delta->x, (float)delta->y);
+		}
+	}
+
 	//imgui window
 	camera.SpawnControlWindow();
 	pLight.SpawnControlWindow();
