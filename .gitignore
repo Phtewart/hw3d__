@@ -85,7 +85,7 @@ StyleCopReport.xml
 *.pgc
 *.pgd
 *.rsp
-*.hw3d/reports
+*.hw3d/reports/
 *.sbr
 *.tlb
 *.tli
