@@ -1,5 +1,4 @@
 #include "App.h"
-#include "AssimpM.h"
 #include <memory>
 #include <algorithm>
 #include "Surface.h"

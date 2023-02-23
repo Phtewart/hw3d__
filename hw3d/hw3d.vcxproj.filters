@@ -123,12 +123,6 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
-    <ClCompile Include="Box.cpp">
-      <Filter>Source Files\Drawable</Filter>
-    </ClCompile>
-    <ClCompile Include="SkinnedBox.cpp">
-      <Filter>Source Files\Drawable</Filter>
-    </ClCompile>
     <ClCompile Include="imgui\imgui_demo.cpp">
       <Filter>ImGUI</Filter>
     </ClCompile>
@@ -160,9 +154,6 @@
       <Filter>Source Files\Drawable</Filter>
     </ClCompile>
     <ClCompile Include="SolidSphere.cpp">
-      <Filter>Source Files\Drawable</Filter>
-    </ClCompile>
-    <ClCompile Include="AssimpM.cpp">
       <Filter>Source Files\Drawable</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
@@ -224,9 +215,6 @@
     <ClInclude Include="Drawable.h">
       <Filter>Header Files\Drawable</Filter>
     </ClInclude>
-    <ClInclude Include="DrawableBase.h">
-      <Filter>Header Files\Drawable</Filter>
-    </ClInclude>
     <ClInclude Include="IndexedTriangleList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -262,15 +250,6 @@
     </ClInclude>
     <ClInclude Include="Sampler.h">
       <Filter>Header Files\DX11Pipeline</Filter>
-    </ClInclude>
-    <ClInclude Include="Box.h">
-      <Filter>Header Files\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="SkinnedBox.h">
-      <Filter>Header Files\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="Cube.h">
-      <Filter>Header Files\Shapes\Primitiv</Filter>
     </ClInclude>
     <ClInclude Include="imgui\imgui_internal.h">
       <Filter>ImGUI</Filter>
@@ -311,17 +290,14 @@
     <ClInclude Include="Sphere.h">
       <Filter>Header Files\Shapes\Primitiv</Filter>
     </ClInclude>
-    <ClInclude Include="TestObject.h">
-      <Filter>Header Files\Drawable</Filter>
-    </ClInclude>
-    <ClInclude Include="AssimpM.h">
-      <Filter>Header Files\Drawable</Filter>
-    </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BindableCodex.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -358,6 +334,9 @@
       <Filter>Shader</Filter>
     </FxCompile>
     <FxCompile Include="PhongPS.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="PhongPSSpecMap.hlsl">
       <Filter>Shader</Filter>
     </FxCompile>
   </ItemGroup>
