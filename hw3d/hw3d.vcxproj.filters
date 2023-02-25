@@ -162,6 +162,12 @@
     <ClCompile Include="TransformCBufDuble.cpp">
       <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
+    <ClCompile Include="Blender.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="Rasterizer.cpp">
+      <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustmWin.h">
@@ -303,6 +309,12 @@
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
     <ClInclude Include="TransformCBufDuble.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Blender.h">
+      <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="Rasterizer.h">
       <Filter>Header Files\DX11Pipeline</Filter>
     </ClInclude>
   </ItemGroup>

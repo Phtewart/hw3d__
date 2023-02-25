@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Bindable.cpp" />
+    <ClCompile Include="Blender.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CustmExeption.cpp" />
     <ClCompile Include="Drawable.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="PixelShader.cpp" />
     <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="Rasterizer.cpp" />
     <ClCompile Include="Sampler.cpp" />
     <ClCompile Include="SolidSphere.cpp" />
     <ClCompile Include="Surface.cpp" />
@@ -192,6 +194,7 @@
     <ClInclude Include="Bindable.h" />
     <ClInclude Include="BindableCodex.h" />
     <ClInclude Include="BIndableCommon.h" />
+    <ClInclude Include="Blender.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ChiliMath.h" />
     <ClInclude Include="ConstantBuffers.h" />
@@ -221,6 +224,7 @@
     <ClInclude Include="PixelShader.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="PointLight.h" />
+    <ClInclude Include="Rasterizer.h" />
     <ClInclude Include="Sampler.h" />
     <ClInclude Include="SolidSphere.h" />
     <ClInclude Include="Sphere.h" />

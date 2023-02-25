@@ -24,6 +24,6 @@ private:
 	Camera camera;
 	PointLight pLight;
 	//Model nano{ wnd.Gfx(),"models\\nano_textured\\nanosuit.obj" };
-	Model cube{ wnd.Gfx(),"models\\foxs\\Foxs.obj" };
+	Model cube{ wnd.Gfx(),"models\\scene_1\\scene_1.obj" };
 	bool mouseLeftIsPressed = false;
 };

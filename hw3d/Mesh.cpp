@@ -233,6 +233,8 @@ std::unique_ptr<Mesh> Model::ParseMesh( Graphics& gfx,const aiMesh& mesh, const 
 	using namespace Bind;
 
 	const auto rootPath = path.parent_path().string() + "\\";
+	bool hasAlphaDiffuse = false;
+	bool hasSpecularMap = false;
 
 	Dvtx::VertexBuffer vbuf( std::move(
 		VertexLayout{}
@@ -267,10 +269,6 @@ std::unique_ptr<Mesh> Model::ParseMesh( Graphics& gfx,const aiMesh& mesh, const 
 	std::vector<std::shared_ptr<Bind::Bindable>> bindablePtrs;
 
 	using namespace std::string_literals;
-	//const auto base = "models\\nano_textured\\"s;
-
-	bool hasSpecularMap = false;
-	float shininess = 35.0f;
 
 	auto meshTag = path.string() + "%" + mesh.mName.C_Str();
 
@@ -284,7 +282,9 @@ std::unique_ptr<Mesh> Model::ParseMesh( Graphics& gfx,const aiMesh& mesh, const 
 
 		if (material.GetTexture(aiTextureType_DIFFUSE, 0, &texFileName) == aiReturn_SUCCESS)
 		{
-			bindablePtrs.push_back(Texture::Resolve(gfx, rootPath + texFileName.C_Str()));
+			auto tex = Texture::Resolve(gfx, rootPath + texFileName.C_Str());
+			hasAlphaDiffuse = tex->HasAlpha();
+			bindablePtrs.push_back(std::move(tex));
 		}
 		if (material.GetTexture(aiTextureType_SPECULAR, 0, &texFileName) == aiReturn_SUCCESS)
 		{
@@ -293,7 +293,8 @@ std::unique_ptr<Mesh> Model::ParseMesh( Graphics& gfx,const aiMesh& mesh, const 
 		}
 		else
 		{
-			material.Get(AI_MATKEY_SHININESS, shininess);
+			float a = 35.0f;
+			material.Get(AI_MATKEY_SHININESS, a);
 		}
 		if (material.GetTexture(aiTextureType_NORMALS, 0, &texFileName) == aiReturn_SUCCESS)
 		{
@@ -312,33 +313,20 @@ std::unique_ptr<Mesh> Model::ParseMesh( Graphics& gfx,const aiMesh& mesh, const 
 	auto pvsbc = pvs->GetBytecode();
 	bindablePtrs.push_back( std::move( pvs ) );
 
+	bindablePtrs.push_back(PixelShader::Resolve(gfx, "PhongLitPS.cso"));
+
 	bindablePtrs.push_back( InputLayout::Resolve( gfx,vbuf.GetLayout(),pvsbc ) );
 
-	if (hasSpecularMap)
-	{
-		bindablePtrs.push_back(PixelShader::Resolve(gfx, "PhongLitPS.cso"));
-	}
-	else
-	{
-		bindablePtrs.push_back(PixelShader::Resolve(gfx, "PhongPS.cso"));
-
-		struct PSMaterialConstant
-		{
-			float specularIntensity = 0.8f;
-			float specularPower;
-			float padding[2];
-		} pmc;
-		pmc.specularPower = shininess;
-		// this is CLEARLY an issue... all meshes will share same mat const, but may have different
-		// Ns (specular power) specified for each in the material properties... bad conflict
-		bindablePtrs.push_back(PixelConstantBuffer<PSMaterialConstant>::Resolve(gfx, pmc, 2u));
-	}
-
 	Node::PSMaterialConstantFullmonte pmc;
-	pmc.specularPower = shininess;
 	// this is CLEARLY an issue... all meshes will share same mat const, but may have different
 	// Ns (specular power) specified for each in the material properties... bad conflict
 	bindablePtrs.push_back(PixelConstantBuffer<Node::PSMaterialConstantFullmonte>::Resolve(gfx, pmc, 1u));
+
+	// anything with alpha diffuse is 2-sided IN SPONZA, need a better way
+	// of signalling 2-sidedness to be more general in the future
+	bindablePtrs.push_back(Rasterizer::Resolve(gfx, hasAlphaDiffuse));
+
+	bindablePtrs.push_back(Blender::Resolve(gfx, false));
 
 	return std::make_unique<Mesh>( gfx,std::move( bindablePtrs ) );
 }

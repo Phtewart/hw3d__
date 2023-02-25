@@ -110,6 +110,17 @@ SamplerState splr;
 
 float4 main(PS_INPUT psInput) : SV_Target
 {
+    float4 defuseTex = tex.Sample(splr, psInput.tc);
+    
+    // bail if highly translucent
+    clip(defuseTex.a < 0.1f ? -1 : 1);
+    
+    // flip normal when backface
+    if (dot(psInput.viewNormal,psInput.viewFragPos) >= 0.0f)
+    {
+        psInput.viewNormal = -psInput.viewNormal;
+
+    }
     // normalize the mesh normal
     psInput.viewNormal = normalize(psInput.viewNormal);
     // replace normal with mapped if normal mapping enabled
@@ -125,10 +136,10 @@ float4 main(PS_INPUT psInput) : SV_Target
     if (specularMapEnabled)
     {
         const float specularSample = spec.Sample(splr, psInput.tc).r;
-        specularReflectionColor = PointLightColor * specularMapWeight * specularSample;
-        if (hasGloss)
+        specularReflectionColor = PointLightColor * specularMapWeight;
+        if (true)
         {
-            specularPower = pow(2.0f, specularSample * 7.0f);
+            specularPower = pow(2.0f,  specularSample * 7.5f);
         }
     }
     else

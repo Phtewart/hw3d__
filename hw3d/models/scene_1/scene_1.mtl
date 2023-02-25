@@ -1,0 +1,79 @@
+# Blender MTL File: 'SuperCube.blend'
+# Material Count: 6
+
+newmtl Fox
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd fox_2K_Albedo.jpg
+map_Ks fox_2K_Roughness.jpg
+map_Kn fox_2K_Normal.jpg
+
+newmtl None
+Ns 500
+Ka 0.8 0.8 0.8
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+map_Kd fox_2K_Albedo.jpg
+map_Ks fox_2K_Roughness.jpg
+map_Kn fox_2K_Normal.jpg
+
+
+newmtl Wall
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd wall_2K_Albedo.jpg
+map_Ks wall_2K_Roughness.jpg
+map_Kn wall_2K_Normal.jpg
+
+newmtl fern
+Ns 199.999995
+Ka 1.000000 1.000000 1.000000
+Kd 0.756863 0.756863 0.756863
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Fern_2K_DO.png
+map_Ks Fern_2K_Roughness.jpg
+map_Kn Fern_2K_Normal.jpg
+
+newmtl floor
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd sbnkysp_2K_Albedo.jpg
+map_Ks sbnkysp_2K_Roughness.jpg
+map_Kn sbnkysp_2K_Normal.jpg
+
+newmtl vasa
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd vaza_2K_Albedo.jpg
+map_Ks vaza_2K_Roughness.jpg
+map_Kn vaza_2K_Normal.jpg

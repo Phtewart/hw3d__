@@ -81,6 +81,7 @@ void App::DoFrame()
 	//imgui window
 	camera.SpawnControlWindow();
 	pLight.SpawnControlWindow();
+	cube.ShowWindow();
 	//nano.ShowWindow();
 
 	// present
