@@ -65,4 +65,8 @@ namespace Bind
 	{
 		return GenerateUID(path, slot);
 	}
+	bool Texture::HasAlpha() const noexcept
+	{
+		return hasAlpha;
+	}
 }

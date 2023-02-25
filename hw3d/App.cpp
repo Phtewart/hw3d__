@@ -26,7 +26,8 @@ void App::DoFrame()
 	wnd.Gfx().SetCamera(camera.GetMatrix());
 	pLight.Bind(wnd.Gfx(),camera.GetMatrix());
 
-	nano.Draw(wnd.Gfx());
+	//nano.Draw(wnd.Gfx());
+	cube.Draw(wnd.Gfx());
 	pLight.Draw(wnd.Gfx());
 	
 	
@@ -80,7 +81,7 @@ void App::DoFrame()
 	//imgui window
 	camera.SpawnControlWindow();
 	pLight.SpawnControlWindow();
-	nano.ShowWindow();
+	//nano.ShowWindow();
 
 	// present
 	wnd.Gfx().EndFrame();

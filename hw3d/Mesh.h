@@ -6,6 +6,7 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 #include <optional>
+#include <filesystem>
 
 
 class ModelException : public CustmException
@@ -33,6 +34,15 @@ class Node
 {
 	friend class Model;
 public:
+	struct PSMaterialConstantFullmonte
+	{
+		BOOL  normalMapEnabled = TRUE;
+		BOOL  specularMapEnabled = TRUE;
+		BOOL  hasGlossMap = FALSE;
+		float specularPower = 3.1f;
+		DirectX::XMFLOAT3 specularColor = { 0.75f,0.75f,0.75f };
+		float specularMapWeight = 0.5f;
+	};
 	Node( int id,const std::string& name,std::vector<Mesh*> meshPtrs,const DirectX::XMMATRIX& transform ) noexcept(!IS_DEBUG);
 	void Draw(Graphics& gfx, DirectX::FXMMATRIX accumulatedTransform) const noexcept(!IS_DEBUG);
 	void SetAppliedTransform(DirectX::FXMMATRIX transform) noexcept;
@@ -52,12 +62,12 @@ private:
 class Model
 {
 public:
-	Model(Graphics& gfx, const std::string fileName);
+	Model(Graphics& gfx, const std::string& pathString);
 	void Draw(Graphics& gfx) const;
 	void ShowWindow(const char* windowName = nullptr) noexcept;
 	~Model() noexcept;
 private:
-	static std::unique_ptr<Mesh> ParseMesh(Graphics& gfx, const aiMesh& mesh, const aiMaterial* const* pMaterials);
+	static std::unique_ptr<Mesh> ParseMesh(Graphics& gfx, const aiMesh& mesh, const aiMaterial* const* pMaterials, const std::filesystem::path& path);
 	std::unique_ptr<Node> ParseNode(int& nextId, const aiNode& node) noexcept;
 private:
 	std::unique_ptr<Node> pRoot;

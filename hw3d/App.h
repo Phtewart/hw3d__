@@ -23,6 +23,7 @@ private:
 	float speed_factor = 1.0f;
 	Camera camera;
 	PointLight pLight;
-	Model nano{ wnd.Gfx(),"models\\nano_textured\\nanosuit.obj" };
+	//Model nano{ wnd.Gfx(),"models\\nano_textured\\nanosuit.obj" };
+	Model cube{ wnd.Gfx(),"models\\foxs\\Foxs.obj" };
 	bool mouseLeftIsPressed = false;
 };
