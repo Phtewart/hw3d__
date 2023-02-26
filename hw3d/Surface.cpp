@@ -88,14 +88,24 @@ Surface Surface::FromFile(const std::string& name)
 	if (scratch.GetImage(0, 0, 0)->format != format)
 	{
 		DirectX::ScratchImage converted;
-		hr = DirectX::Convert(
-			*scratch.GetImage(0, 0, 0),
-			format,
-			DirectX::TEX_FILTER_DEFAULT,
-			DirectX::TEX_THRESHOLD_DEFAULT,
-			converted
-		);
-
+		if (scratch.GetImage(0, 0, 0)->format == DXGI_FORMAT_R8G8B8A8_UNORM_SRGB)
+		{
+			hr = DirectX::Convert(
+				*scratch.GetImage(0, 0, 0),
+				format,
+				DirectX::TEX_FILTER_SRGB_OUT,
+				DirectX::TEX_THRESHOLD_DEFAULT,
+				converted);
+		}
+		else
+		{
+			hr = DirectX::Convert(
+				*scratch.GetImage(0, 0, 0),
+				format,
+				DirectX::TEX_FILTER_DEFAULT,
+				DirectX::TEX_THRESHOLD_DEFAULT,
+				converted);
+		}
 		if (FAILED(hr))
 		{
 			throw Surface::Exception(__LINE__, __FILE__, name, "Failed to convert image", hr);
