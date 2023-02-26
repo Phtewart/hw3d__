@@ -27,7 +27,7 @@ float3 MapNormal(
     // sample and unpack the normal from texture into target space   
     float3 normalSample = nmap.Sample(splr, tc).xyz;
     normalSample.y = 1 - normalSample.y;
-    //normalSample = normalSample * float3(1.0f, -1.0f, 1.0f);
+
     const float3 tanNormal = normalSample * 2.0f - 1.0f;
     // bring normal from tanspace into target space
     return normalize(mul(tanNormal, tanToTarget));

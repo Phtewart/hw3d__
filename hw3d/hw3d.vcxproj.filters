@@ -114,9 +114,6 @@
     <ClCompile Include="Surface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GDIPlusMenedger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sampler.cpp">
       <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
@@ -167,6 +164,9 @@
     </ClCompile>
     <ClCompile Include="Rasterizer.cpp">
       <Filter>Source Files\DX11Pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="ChiliUtil.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,9 +245,6 @@
     <ClInclude Include="Surface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GDIPlusManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Plane.h">
       <Filter>Header Files\Shapes\Primitiv</Filter>
     </ClInclude>
@@ -316,6 +313,9 @@
     </ClInclude>
     <ClInclude Include="Rasterizer.h">
       <Filter>Header Files\DX11Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="ChiliUtil.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

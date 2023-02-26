@@ -19,7 +19,7 @@ void PointLight::SpawnControlWindow() noexcept
 		ImGui::SliderFloat("Z", &cbData.pos.z, -60.0f, 60.0f, "%.1f");
 
 		ImGui::Text("Intensity/Color");
-		ImGui::SliderFloat("Intensity", &cbData.diffuseIntensity, 0.01f, 2.0f, "%.2f");
+		ImGui::SliderFloat("Intensity", &cbData.diffuseIntensity, 0.01f, 5.0f, "%.2f");
 		ImGui::ColorEdit3("Diffuse Color", &cbData.diffuseColor.x);
 		ImGui::ColorEdit3("Ambient", &cbData.ambient.x);
 

@@ -174,11 +174,11 @@
     <ClCompile Include="Bindable.cpp" />
     <ClCompile Include="Blender.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ChiliUtil.cpp" />
     <ClCompile Include="CustmExeption.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="dxerr.cpp" />
     <ClCompile Include="DxgiInfoMenegder.cpp" />
-    <ClCompile Include="GDIPlusMenedger.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="ImguiManager.cpp" />
     <ClCompile Include="imgui\backends\imgui_impl_dx11.cpp" />
@@ -217,13 +217,13 @@
     <ClInclude Include="Blender.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ChiliMath.h" />
+    <ClInclude Include="ChiliUtil.h" />
     <ClInclude Include="ConstantBuffers.h" />
     <ClInclude Include="CustmException.h" />
     <ClInclude Include="CustmWin.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="dxerr.h" />
     <ClInclude Include="DxgiInfoMenegder.h" />
-    <ClInclude Include="GDIPlusManager.h" />
     <ClInclude Include="GFXExceptionMacros.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="ImguiManager.h" />

@@ -2,15 +2,11 @@
 #include <memory>
 #include <algorithm>
 #include "Surface.h"
-#include "GDIPlusManager.h"
 #include "imgui/imgui.h"
 #include <dxtex\DirectXTex.h>
 
 
 namespace dx = DirectX;
-
-
-GDIPlusManager gdipm;
 
 App::App()
 	:
@@ -18,14 +14,6 @@ App::App()
 	pLight(wnd.Gfx())
 	
 {
-	auto image = DirectX::ScratchImage{};
-	DirectX::LoadFromWICFile(L"Images/Marble.png",DirectX::WIC_FLAGS_NONE, nullptr, image);
-	const auto img = image.GetImage(0, 0, 0);
-	auto a = img->pixels[0];
-	auto b = img->pixels[1];
-	auto c = img->pixels[2];
-	auto d = img->pixels[3];
-
 	wnd.Gfx().SetProjection(dx::XMMatrixPerspectiveLH(1.0f, 3.0f / 4.0f, 0.5f, 40.0f));
 }
 
