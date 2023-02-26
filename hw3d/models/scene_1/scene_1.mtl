@@ -12,7 +12,7 @@ d 1.000000
 illum 2
 map_Kd fox_2K_Albedo.jpg
 map_Ks fox_2K_Roughness.jpg
-map_Kn fox_2K_Normal.jpg
+map_Kn fox_2K_Normal_2.png
 
 newmtl None
 Ns 500

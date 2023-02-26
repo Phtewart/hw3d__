@@ -6,7 +6,7 @@
 #include "ChiliUtil.h"
 
 
-Surface::Surface(unsigned int width, unsigned int height) noexcept
+Surface::Surface(unsigned int width, unsigned int height) 
 {
 	HRESULT hr = scratch.Initialize2D(
 		format,
@@ -18,7 +18,7 @@ Surface::Surface(unsigned int width, unsigned int height) noexcept
 	}
 }
 
-void Surface::Clear(Color fillValue) noexcept
+void Surface::Clear(Color fillValue) 
 {
 	const auto width = GetWidth();
 	const auto height = GetHeight();

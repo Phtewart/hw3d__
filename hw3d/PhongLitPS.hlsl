@@ -19,14 +19,21 @@ float3 MapNormal(
     uniform SamplerState splr)
 {
     // build the tranform (rotation) into same space as tan/bitan/normal (target space)
-    //float3 N = normal;
-    //float3 T = normalize(tan - dot(tan, N) * N);
-    //float3 B = cross(N, T);
+    float3 N = normal;
+    float3 T = normalize(tan - dot(tan, N) * N);
+    float3 B = cross(N, T);
     
-    //const float3x3 tanToTarget = float3x3(T, B, N);
-    const float3x3 tanToTarget = float3x3(tan, bitan, normal);
+    const float3x3 tanToTarget = float3x3(T, B, N);
+    //const float3x3 tanToTarget = float3x3(tan, bitan, normal);
     // sample and unpack the normal from texture into target space   
-    float3 normalSample = nmap.Sample(splr, tc).xyz;
+    float4 normalSample = nmap.Sample(splr, tc).xyzw;   
+    
+    float r = normalSample.r;
+    float g = normalSample.g;
+    float b = normalSample.b;
+    float a = normalSample.a;
+    
+    
     const float3 tanNormal = normalSample * 2.0f - 1.0f;
     // bring normal from tanspace into target space
     return normalize(mul(tanNormal, tanToTarget));
@@ -115,15 +122,15 @@ float4 main(PS_INPUT psInput) : SV_Target
     clip(defuseTex.a < 0.1f ? -1 : 1);
     
     // flip normal when backface
-    //if (dot(psInput.viewNormal,psInput.viewFragPos) >= 0.0f)
-    //{
-    //    psInput.viewNormal = -psInput.viewNormal;
+    if (dot(psInput.viewNormal, psInput.viewFragPos) >= 0.0f)
+    {
+        psInput.viewNormal = -psInput.viewNormal;
 
-    //}
+    }
     // normalize the mesh normal
     psInput.viewNormal = normalize(psInput.viewNormal);
     // replace normal with mapped if normal mapping enabled
-    if (false)
+    if (normalMapEnabled)
     {
         psInput.viewNormal = MapNormal(normalize(psInput.viewTan), normalize(psInput.viewBitan), psInput.viewNormal, psInput.tc, nmap, splr);
     }
@@ -156,7 +163,7 @@ float4 main(PS_INPUT psInput) : SV_Target
     );
 	// final color = attenuate diffuse & ambient by diffuse texture color and add specular reflected
     
-    if(true)
+    if(false)
     {
         return float4(psInput.viewNormal,1.0f);
     }

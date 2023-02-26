@@ -88,8 +88,8 @@ public:
 	class Exception : public CustmException
 	{
 	public:
-		Exception(int line, const char* file, std::string note, std::optional<HRESULT> hr = {}) noexcept;
-		Exception(int line, const char* file, std::string filename, std::string note, std::optional<HRESULT> hr = {}) noexcept;
+		Exception(int line, const char* file, std::string note, std::optional<HRESULT> hr = {}) noexcept ;
+		Exception(int line, const char* file, std::string filename, std::string note, std::optional<HRESULT> hr = {}) noexcept ;
 		const char* what() const noexcept override;
 		const char* GetType() const noexcept override;
 		const std::string& GetNote() const noexcept;
@@ -98,13 +98,13 @@ public:
 		std::string note;
 	};
 public:
-	Surface(unsigned int width, unsigned int height) noexcept;
+	Surface(unsigned int width, unsigned int height);
 	Surface(Surface&& source) noexcept = default;
 	Surface(Surface&) = delete;
 	Surface& operator=(Surface&& donor) noexcept = default;
 	Surface& operator=(const Surface&) = delete;
 	~Surface() = default;
-	void Clear(Color fillValue) noexcept;
+	void Clear(Color fillValue);
 	void PutPixel(unsigned int x, unsigned int y, Color c) noexcept(!IS_DEBUG);
 	Color GetPixel(unsigned int x, unsigned int y) const noexcept(!IS_DEBUG);
 	unsigned int GetWidth() const noexcept;
