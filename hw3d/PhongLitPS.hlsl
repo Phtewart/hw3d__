@@ -115,15 +115,15 @@ float4 main(PS_INPUT psInput) : SV_Target
     clip(defuseTex.a < 0.1f ? -1 : 1);
     
     // flip normal when backface
-    if (dot(psInput.viewNormal,psInput.viewFragPos) >= 0.0f)
-    {
-        psInput.viewNormal = -psInput.viewNormal;
+    //if (dot(psInput.viewNormal,psInput.viewFragPos) >= 0.0f)
+    //{
+    //    psInput.viewNormal = -psInput.viewNormal;
 
-    }
+    //}
     // normalize the mesh normal
     psInput.viewNormal = normalize(psInput.viewNormal);
     // replace normal with mapped if normal mapping enabled
-    if (normalMapEnabled)
+    if (false)
     {
         psInput.viewNormal = MapNormal(normalize(psInput.viewTan), normalize(psInput.viewBitan), psInput.viewNormal, psInput.tc, nmap, splr);
     }
@@ -155,5 +155,13 @@ float4 main(PS_INPUT psInput) : SV_Target
         lv.vToL, psInput.viewFragPos, att, specularPower
     );
 	// final color = attenuate diffuse & ambient by diffuse texture color and add specular reflected
-    return float4(saturate((diffuse + ambient) * tex.Sample(splr, psInput.tc).rgb + specularReflected), 1.0f);
+    
+    if(true)
+    {
+        return float4(psInput.viewNormal,1.0f);
+    }
+    else
+    {
+        return float4(saturate((diffuse + ambient) * tex.Sample(splr, psInput.tc).rgb + specularReflected), 1.0f);
+    }
 }
