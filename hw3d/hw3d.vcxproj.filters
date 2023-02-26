@@ -52,6 +52,9 @@
     <Filter Include="ImGUI">
       <UniqueIdentifier>{b09ad084-18f8-4457-8fa8-166756993de2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stuff">
+      <UniqueIdentifier>{fbc97257-63f1-4813-99d5-5ba995db3fac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WInMain.cpp">
@@ -166,6 +169,12 @@
       <Filter>Source Files\DX11Pipeline</Filter>
     </ClCompile>
     <ClCompile Include="ChiliUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturePreprocessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommander.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -317,6 +326,15 @@
     <ClInclude Include="ChiliUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TexturePreprocessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommander.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DXGetErrorString.inl">
@@ -327,6 +345,9 @@
     </None>
     <None Include="DXGetErrorDescription.inl">
       <Filter>Header Files\DxErros</Filter>
+    </None>
+    <None Include="process.json">
+      <Filter>Stuff</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

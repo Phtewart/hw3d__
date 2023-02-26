@@ -19,15 +19,14 @@ float3 MapNormal(
     uniform SamplerState splr)
 {
     // build the tranform (rotation) into same space as tan/bitan/normal (target space)
-    float3 N = normal;
-    float3 T = normalize(tan - dot(tan, N) * N);
-    float3 B = cross(N, T);
+    //float3 N = normal;
+    //float3 T = normalize(tan - dot(tan, N) * N);
+    //float3 B = cross(N, T);
     
-    const float3x3 tanToTarget = float3x3(T, B, N);
+    //const float3x3 tanToTarget = float3x3(T, B, N);
+    const float3x3 tanToTarget = float3x3(tan, bitan, normal);
     // sample and unpack the normal from texture into target space   
     float3 normalSample = nmap.Sample(splr, tc).xyz;
-    normalSample.y = 1 - normalSample.y;
-
     const float3 tanNormal = normalSample * 2.0f - 1.0f;
     // bring normal from tanspace into target space
     return normalize(mul(tanNormal, tanToTarget));

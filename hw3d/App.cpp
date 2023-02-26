@@ -4,13 +4,15 @@
 #include "Surface.h"
 #include "imgui/imgui.h"
 #include <dxtex\DirectXTex.h>
+#include "ChiliUtil.h"
 
 
 namespace dx = DirectX;
 
-App::App()
+App::App(const std::string& commandLine )
 	:
 	wnd(1200, 900, "The Donkey Fart Box"),
+	scriptCommander(TokenizeQuoted(commandLine)),
 	pLight(wnd.Gfx())
 	
 {

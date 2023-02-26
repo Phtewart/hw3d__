@@ -6,11 +6,12 @@
 #include "PointLight.h"
 #include "Mesh.h"
 #include <set>
+#include "ScriptCommander.h"
 
 class App
 {
 public:
-	App();
+	App(const std::string& commandLine = "");
 	// master frame / message loop
 	int Go();
 	~App();
@@ -19,6 +20,7 @@ private:
 private:
 	ImguiManager imguim;
 	Window wnd;
+	ScriptCommander scriptCommander;
 	Timer timer;
 	float speed_factor = 1.0f;
 	Camera camera;

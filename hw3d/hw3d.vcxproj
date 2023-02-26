@@ -197,9 +197,11 @@
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Rasterizer.cpp" />
     <ClCompile Include="Sampler.cpp" />
+    <ClCompile Include="ScriptCommander.cpp" />
     <ClCompile Include="SolidSphere.cpp" />
     <ClCompile Include="Surface.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TexturePreprocessor.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Topology.cpp" />
     <ClCompile Include="TransformCBuf.cpp" />
@@ -238,6 +240,7 @@
     <ClInclude Include="IndexedTriangleList.h" />
     <ClInclude Include="IndicesBuffer.h" />
     <ClInclude Include="InputLayout.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Mouse.h" />
@@ -246,10 +249,12 @@
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="Rasterizer.h" />
     <ClInclude Include="Sampler.h" />
+    <ClInclude Include="ScriptCommander.h" />
     <ClInclude Include="SolidSphere.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="Surface.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="TexturePreprocessor.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Topology.h" />
     <ClInclude Include="TransformCBuf.h" />
@@ -264,6 +269,7 @@
     <None Include="DXGetErrorDescription.inl" />
     <None Include="DXGetErrorString.inl" />
     <None Include="DXTrace.inl" />
+    <None Include="process.json" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PhongLitPS.hlsl">
